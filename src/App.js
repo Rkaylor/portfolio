@@ -7,6 +7,9 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
+import Footer from './components/Footer';
+
+
 
 
 class App extends React.Component{
@@ -56,7 +59,9 @@ render() {
 
     </Navbar>
     {/* End of NavBar Design */}
-    
+
+
+    <Footer />
     </Container>
 
     </Router>
