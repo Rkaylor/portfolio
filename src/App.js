@@ -41,7 +41,7 @@ render() {
     
     <Router>
     <Container className="p-0"fluid={true} >
-    
+    {/* NavBar Design and Setup */}
     <Navbar className='border-bottom' bg="transparent" expand="lg">
 
       <Navbar.Brand>Robert</Navbar.Brand>
@@ -55,7 +55,8 @@ render() {
       </Navbar.Collapse>
 
     </Navbar>
-
+    {/* End of NavBar Design */}
+    
     </Container>
 
     </Router>
