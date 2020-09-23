@@ -8,6 +8,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 import Footer from './components/Footer';
+import Home from './utils/HomePage';
 
 
 
@@ -54,8 +55,12 @@ render() {
         <Link className="nav-link" to="/">Home</Link>
         <Link className="nav-link" to="/about">About Me</Link>
         <Link className="nav-link" to="/contact">Contact</Link>
-      </Nav>
+           </Nav>
       </Navbar.Collapse>
+     
+      {/* Routes */}
+  <Route path="/" exact render={() => <HomePage title={this.state.home.title} />} />
+
 
     </Navbar>
     {/* End of NavBar Design */}
