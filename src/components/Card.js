@@ -5,7 +5,11 @@ import React from 'react';
 function Card(props){
 
     return(
-        <p>card work</p>
+        <div>
+            <img className=""src={props.item.imgSrc} alt={props.item.imgsrc}/>
+            { props.item.selected && <CardInfo title={props.item.title} subTitle={props.item.subTitle} link={props.item.link} />} 
+        </div>
+
     );
 }
 
