@@ -1,11 +1,19 @@
 import React from "react";
 
+import github from '../images/github.jpg'
+// import github from '../images/github.jpg'
+// import github from '../images/github.jpg'
+
+
+
 class Carousel extends React.Component {
 
     constructor(props){
     super(props);
-    this.state = [
-        {
+    this.state = {
+        items: [
+            {
+        
             id: 0,
             title: "GitHub",
             subTitle: "Repository",
@@ -28,9 +36,32 @@ class Carousel extends React.Component {
             link: "https://high-score-quiz-game.herokuapp.com/",
             selected: false
 
-        },
-    ]
+            },
+        ]
+    }
 }
+
+    handleCardClick = (id, card) => {
+        let items = [...this.state.items];
+
+        items[id].selected = items[id].selected ? false : true 
+
+        items.forEach(item => {
+            if(item.id !== id){
+                item.selected = false;
+            }
+        });
+
+        this.setState({
+            items
+        });
+    }
+
+    makeItems = (items) => {
+        return items.map(item => {
+            return <Card item={item} onClick={(e => this.handleCardClick(item.id, event, e))} key={item.id} />
+        })
+    }
 
     render() {
         return(
