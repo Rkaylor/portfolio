@@ -1,24 +1,21 @@
 import React from 'react'
-import { Container, Row, Col } from 'react-bootstrap';
 import Hero from '../components/Hero.js'
-
+import Content from '../components/Content'
 
 function AboutPage(props) {
     return(
-        <Container>
+        
             <div>
-            <Hero>
-                <Row>
-                    <Col>
-                    </Col>
-                </Row>
-            </Hero>
-            </div>
-
-        </Container>
+            <Hero title={props.title}/>
+                
+                    <Content>
+                    This page is a work in progress!
+                    </Content>
+                
+                </div>
     
     
         );
-    };
+    }
 
 export default AboutPage;
