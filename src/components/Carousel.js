@@ -1,6 +1,8 @@
 import React from "react";
-import Card from "./Card"
-import github from '../images/github.jpg'
+import Card from "./Card";
+import GitHub from '../images/github.jpg';
+import Linkden from '../images/linkden.png';
+import Projects from '../images/MyProject.png';
 import { Container, Row } from "react-bootstrap";
 // import github from '../images/github.jpg'
 // import github from '../images/github.jpg'
@@ -18,6 +20,7 @@ class Carousel extends React.Component {
             id: 0,
             title: "GitHub",
             subTitle: "Repository",
+            imgSrc: GitHub,
             link: "https://github.com/Rkaylor",
             selected: false
 
@@ -26,6 +29,7 @@ class Carousel extends React.Component {
             id: 1,
             title: "Linkden",
             subTitle: "My Personal Linkden",
+            ImgSrc: Linkden, 
             link: "https://www.linkedin.com/in/robert-kaylor12/",
             selected: false
 
@@ -34,6 +38,7 @@ class Carousel extends React.Component {
             id: 2,
             title: "Projects",
             subTitle: "My Projects",
+            imgSrc: Projects, 
             link: "https://high-score-quiz-game.herokuapp.com/",
             selected: false
 
