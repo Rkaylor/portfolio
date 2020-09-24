@@ -1,7 +1,6 @@
 import React from "react";
-import React from 'react-bootstrap/Container'
-import Container from "react-bootstrap/Container";
-import { Row, Col } from "react-bootstrap";
+// import React from 'react-bootstrap/Container';
+import { Row, Col, Container,  } from "react-bootstrap";
 
 function Footer(){
 
