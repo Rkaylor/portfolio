@@ -1,6 +1,7 @@
 import React from "react";
-
+import Card from "./Card"
 import github from '../images/github.jpg'
+import { Container, Row } from "react-bootstrap";
 // import github from '../images/github.jpg'
 // import github from '../images/github.jpg'
 
@@ -59,14 +60,19 @@ class Carousel extends React.Component {
 
     makeItems = (items) => {
         return items.map(item => {
-            return <Card item={item} onClick={(e => this.handleCardClick(item.id, event, e))} key={item.id} />
+            return <Card item={item} onClick={(e => this.handleCardClick(item.id, e))} key={item.id} />
         })
     }
 
     render() {
         return(
             
-            <p>Carousel Works!</p>
+            <Container fluid={true}>
+                <Row className="justify-content-around">
+                    {this.makeItems(this.state.items)}
+
+                </Row>
+            </Container>
             
         );
     }
