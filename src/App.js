@@ -8,7 +8,10 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 import Footer from './components/Footer';
-import Home from './utils/HomePage';
+import HomePage from './utils/HomePage';
+import AboutPage from './utils/AboutPage';
+import ContactPage from './utils/ContactPage'
+
 
 
 
@@ -24,9 +27,9 @@ this.state = {
     { title:"Contact", path: "/contact"},
   ],
   home: {
-    title:"I'm Robert a Web Designer",
-    subtitle:"Projects",
-    subtext:"Visit my Projects"
+    title: "I'm Robert",
+    subTitle: "Web Designer",
+    subText: "Projects"
   },
   about: {
     title:"About Me"
@@ -35,8 +38,7 @@ this.state = {
   contact: {
     title:"Send me a Message!"
     
-  }
-    
+      }
     }
   }
 
@@ -62,7 +64,7 @@ render() {
 
 
       {/* Routes */}
-    <Route path="/" exact render={() => <HomePage title={this.state.home.title} subTitle={this.state.home.subTitle} text={this.state.home.text} />} />
+    <Route path="/" exact render={() => <HomePage title={this.state.home.title} subTitle={this.state.home.subTitle} subText={this.state.home.subText} />} />
     <Route path="/about" render={() => <AboutPage title={this.state.about.title} />} />
     <Route path="/contact" render={() => <ContactPage title={this.state.contact.title}  />} />
       {/* End of Routes */}
