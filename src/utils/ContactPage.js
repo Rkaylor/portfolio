@@ -2,7 +2,7 @@ import React from 'react'
 import { render } from '@testing-library/react';
 import Hero from '../components/Hero';
 import Content from '../components/Content';
-import { Form } from 'react-bootstrap';
+import { Form, Button } from 'react-bootstrap';
 
 
 class ContactPage extends React.Component {
@@ -19,30 +19,51 @@ class ContactPage extends React.Component {
         }
     }
 
+    handleChange = () => {
+        
+
+        const target = event.target;
+        const value = target.type === 'checkbox' ? target.checked : target.value;
+        const name = target.name;
+
+        this.setState({
+            [name]: value
+        })
+    }
+
     render() {
     return(
         <div>
             <Hero title={this.props.title}/>
             <Content>
-                <Form>
+                
+                <Form onSubmit={this.handleSubmit}>
                     <Form.Group>
                         <Form.Label htmlFor="full-name">Full Name</Form.Label>
-                        <Form.Control id="full-name" name="name" type="text" value={this.state.name} onChange{this.handleChange} />
+                        <Form.Control id="full-name" name="name" type="text" value={this.state.name} onChange={this.handleChange} />
                         </Form.Group>
 
                         <Form.Label htmlFor="email">Email</Form.Label>
-                        <Form.Control id="email" name="email" type="email" value='email' onChange{this.handleChange} />
+                        <Form.Control id="email" name="email" type="email" value='email' onChange={this.handleChange} />
                         </Form.Group>
 
                         <Form.Label htmlFor="message">Message</Form.Label>
-                        <Form.Control id="message" name="message" as="text-area" row="3" value={this.state.name} onChange{this.handleChange} />
+                        <Form.Control id="message" name="message" as="text-area" rows="3" value={this.state.name} onChange={this.handleChange} />
                         </Form.Group>
+
+                        <Button className="d-inline-block" varient="primary" type="submit" disabled={this.state.disabled}>
+                            Send
+
+                        </Button>
+
+                        {this.state.emailSent === true && <p className="d-inline success-msg">Email Sent</p>}
+                        {this.state.emailSent === false && <p className="d-inline err-msg">Email Not Sent</p>}
+
                 </Form>
             </Content>
             
         </div>
-    
-    
+        
         );
     }
 }
